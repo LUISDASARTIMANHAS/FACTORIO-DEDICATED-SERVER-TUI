@@ -135,7 +135,7 @@ const routesDir = __dirname;
 // const hostname = "::"; bind ipv4 e ipv6 pra fora
 const hostname = "::";
 // 0 força o express a pegar uma porta aleatora
-const porta = process.env.PORT;
+const porta = process.env.PORT || 34190;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
