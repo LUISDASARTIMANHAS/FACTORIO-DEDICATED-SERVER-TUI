@@ -1,0 +1,43 @@
+{
+  "cacheDurationInMinutes": 30,
+  "blockedRoutes": [
+    "/default/api"
+  ],
+  "emailSystem": {
+    "service": "Gmail",
+    "host": "smtp.gmail.com",
+    "port": 25,
+    "ssl_tls": true,
+    "user": "example@gmail.com"
+  },
+  "ORIGIN": [
+    "/^https://.+/"
+  ],
+  "METHODS": "GET,PUT,POST,DELETE",
+  "ALLOWED_HEADERS": [
+    "Content-Type",
+    "Access-Control-Allow-Origin",
+    "authorization",
+    "id",
+    "key",
+    "urlParams",
+    "cache-control",
+    "X-Disable-Cache"
+  ],
+  "ALLOWED_USER_AGENTS": [
+    "Mozilla",
+    "Chrome",
+    "Firefox",
+    "custom/1.0"
+  ],
+  "BLOCKED_USER_AGENTS": [
+    "CensysInspect",
+    "Shodan",
+    "curl",
+    "python-requests",
+    "nmap"
+  ],
+  "requestLogger": {
+    "enabled": true
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "factorio-dedicated-server-tui",
+  "version": "1.0.0",
+  "description": "**FACTORIO DEDICATED SERVER TUI** é um projeto de **interface em modo texto (TUI/CLI)** e **ferramenta CMD** criado para **automatizar, gerenciar e monitorar servidores dedicados de Factorio** de forma simples, rápida e confiável em ambientes Windows.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run update && node --watch server.js",
+    "update": "npx npm-check-updates -u && npm install",
+    "start:dev": "nodemon start.js",
+    "autoInstall": "npm update && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LUISDASARTIMANHAS/FACTORIO-DEDICATED-SERVER-TUI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/LUISDASARTIMANHAS/FACTORIO-DEDICATED-SERVER-TUI/issues"
+  },
+  "homepage": "https://github.com/LUISDASARTIMANHAS/FACTORIO-DEDICATED-SERVER-TUI#readme",
+  "dependencies": {
+    "multer": "^2.0.2",
+    "nodemon": "^3.1.11",
+    "npm-package-nodejs-utils-lda": "^1.0.55"
+  }
+}
