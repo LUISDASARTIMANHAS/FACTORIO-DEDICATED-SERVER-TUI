@@ -22,7 +22,7 @@ function apiFetch(url, options = {}) {
  * @return {Promise<void>}
  */
 async function loadConfig() {
-	const res = await apiFetch("/api/config");
+	const res = await apiFetch("/api/factorio/config");
 	const data = await res.json();
 
 	Object.keys(data).forEach((key) => {
@@ -42,7 +42,7 @@ document.getElementById("configForm").addEventListener("submit", async (e) => {
 		rconPassword: rconPassword.value,
 	};
 
-	const res = await apiFetch("/api/config", {
+	const res = await apiFetch("/api/factorio/config", {
 		method: "POST",
 		body: JSON.stringify(config),
 	});
