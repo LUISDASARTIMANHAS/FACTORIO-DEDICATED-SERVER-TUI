@@ -22,3 +22,6 @@ set RESTART_DELAY=15
 
 :: Garantias
 if not exist "%LOG_DIR%" mkdir "%LOG_DIR%"
+if not exist "%SETTINGS_FILE%" (
+    copy "%FACTORIO_DATA_DIR%\server-settings.example.json" "%SETTINGS_FILE%"
+)
