@@ -1,7 +1,21 @@
 const express = require("express");
+const fs = require("fs");
 const { freadBin, fwriteBin } = require("npm-package-nodejs-utils-lda");
+const path = require("path");
 const router = express.Router();
-const configFilePath = "../data/factorio-config.bin";
+const configFilePath = "./data/factorio-config.bin";
+
+// Verifica se o arquivo users.bin existe
+if (!fs.existsSync(configFilePath)) {
+  // Se não existir, cria o arquivo users.bin com um array vazio
+  const defaultSchema = {
+		dirname: __dirname,
+    factorioPath: path.resolve(__dirname,"..","..","factorio"),
+    factorioPort: "34197",
+    factorioRcon: "27015",
+  };
+  fwriteBin(configFilePath, defaultSchema); // Cria um arquivo binário vazio
+}
 
 /**
  * Retorna configuração atual
