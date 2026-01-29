@@ -5,17 +5,14 @@ const configFilePath = "./data/factorio-config.bin";
 
 let factorioProcess = null;
 
-/**
- * Buffer de saída do console
- */
 const OUTPUT_LIMIT = 1000;
 const consoleOutput = [];
 
 /**
- * Adiciona linha ao console
+ * Adiciona saída ao buffer
  * @param {"stdout"|"stderr"|"system"|"error"} type
  * @param {string} message
- * @returns {void}
+ * @return {void}
  */
 function pushOutput(type, message) {
 	consoleOutput.push({
@@ -31,7 +28,7 @@ function pushOutput(type, message) {
 
 /**
  * Retorna saída completa do console
- * @returns {Array}
+ * @return {Array}
  */
 function getConsoleOutput() {
 	return consoleOutput;
@@ -39,19 +36,19 @@ function getConsoleOutput() {
 
 /**
  * Lê configuração atual
- * @returns {object}
+ * @return {object}
  */
 function getConfig() {
 	return freadBin(configFilePath);
 }
 
 /**
- * Inicia o servidor Factorio
- * @returns {Promise<string>}
+ * Inicia o servidor Factorio (WINDOWS SAFE)
+ * @return {Promise<string>}
  */
 function startServer() {
 	return new Promise((resolve, reject) => {
-		if (factorioProcess && factorioProcess.pid) {
+		if (factorioProcess?.pid) {
 			return resolve(`Servidor já está em execução PID: ${factorioProcess.pid}`);
 		}
 
@@ -61,15 +58,22 @@ function startServer() {
 			return reject(new Error("Caminho do Factorio ou Save não configurado"));
 		}
 
-		const command =
-			`"${cfg.factorioPath}" --start-server "${cfg.savePath}" --port ${cfg.serverPort}`;
-
 		pushOutput("system", "Iniciando servidor Factorio");
 
-		factorioProcess = spawn("cmd.exe", ["/c", command], {
-			windowsHide: true,
-			stdio: ["pipe", "pipe", "pipe"],
-		});
+		// ✅ EXECUTÁVEL DIRETO
+		factorioProcess = spawn(
+			cfg.factorioPath,
+			[
+				"--start-server",
+				cfg.savePath,
+				"--port",
+				String(cfg.factorioPort),
+			],
+			{
+				windowsHide: true,
+				stdio: ["pipe", "pipe", "pipe"],
+			}
+		);
 
 		factorioProcess.stdout.on("data", (data) => {
 			const msg = data.toString();
@@ -95,7 +99,7 @@ function startServer() {
 		});
 
 		setTimeout(() => {
-			if (!factorioProcess || !factorioProcess.pid) {
+			if (!factorioProcess?.pid) {
 				pushOutput("error", "Factorio não iniciou (PID inexistente)");
 				factorioProcess = null;
 				return reject(new Error("Factorio não iniciou"));
@@ -109,11 +113,11 @@ function startServer() {
 
 /**
  * Para o servidor Factorio
- * @returns {Promise<string>}
+ * @return {Promise<string>}
  */
 function stopServer() {
 	return new Promise((resolve, reject) => {
-		if (!factorioProcess || !factorioProcess.pid) {
+		if (!factorioProcess?.pid) {
 			pushOutput("system", "Servidor já estava parado");
 			factorioProcess = null;
 			return resolve("Servidor já está parado");
@@ -133,10 +137,10 @@ function stopServer() {
 
 /**
  * Retorna status do servidor
- * @returns {string}
+ * @return {string}
  */
 function getStatus() {
-	return factorioProcess && factorioProcess.pid
+	return factorioProcess?.pid
 		? `ONLINE PID: ${factorioProcess.pid}`
 		: "OFFLINE";
 }
