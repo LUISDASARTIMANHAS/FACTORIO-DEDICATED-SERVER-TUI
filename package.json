@@ -1,6 +1,6 @@
 {
   "name": "factorio-dedicated-server-tui",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "**FACTORIO DEDICATED SERVER TUI** é um projeto de **interface em modo texto (TUI/CLI)** e **ferramenta CMD** criado para **automatizar, gerenciar e monitorar servidores dedicados de Factorio** de forma simples, rápida e confiável em ambientes Windows.",
   "main": "index.js",
   "scripts": {
