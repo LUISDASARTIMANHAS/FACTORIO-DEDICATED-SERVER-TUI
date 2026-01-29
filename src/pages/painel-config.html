@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Configuração do Servidor Factorio</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/painel.css" />
+	</head>
+
+	<body class="bg-dark text-light">
+		<main class="container py-4">
+			<h3>⚙️ Configuração do Servidor</h3>
+
+			<form id="configForm" class="mt-4">
+				<div class="mb-3">
+					<label class="form-label">Caminho do Factorio</label>
+					<input
+						id="factorioPath"
+						class="form-control bg-dark text-light"
+						placeholder="C:\Factorio\bin\x64\factorio.exe"
+					/>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label">Save</label>
+					<input
+						id="savePath"
+						class="form-control bg-dark text-light"
+						placeholder="C:\Factorio\saves\save.zip"
+					/>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label">Porta do Servidor</label>
+					<input
+						id="serverPort"
+						type="number"
+						class="form-control bg-dark text-light"
+					/>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label">Porta RCON</label>
+					<input
+						id="rconPort"
+						type="number"
+						class="form-control bg-dark text-light"
+					/>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label">Senha RCON</label>
+					<input
+						id="rconPassword"
+						type="password"
+						class="form-control bg-dark text-light"
+					/>
+				</div>
+
+				<button class="btn btn-success">Salvar Configuração</button>
+			</form>
+
+			<pre id="result" class="mt-4"></pre>
+		</main>
+
+		<script src="js/painel-config.js"></script>
+	</body>
+</html>
