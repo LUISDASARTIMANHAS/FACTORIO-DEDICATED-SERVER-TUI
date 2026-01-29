@@ -7,10 +7,10 @@ const factorioControlRoutes = require("./routes/factorio.routes")
 const factorioConfigRoutes = require("./routes/config.routes");
 
 
-// Rotas de controle do Factorio
+// Rotas de controle do Factorio, "/api/factorio" isso força no use a usar por padrão essa rota base
 router.use("/api/factorio", factorioControlRoutes);
 
-// Rotas de configuração
+// Rotas de configuração,"/api/factorio/config" isso força no use a usar por padrão essa rota base
 router.use("/api/factorio/config", factorioConfigRoutes);
 
 // Middleware para lidar com rotas não encontradas (404)

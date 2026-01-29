@@ -1,20 +1,23 @@
 const express = require("express");
+const { freadBin, fwriteBin } = require("npm-package-nodejs-utils-lda");
 const router = express.Router();
-const configService = require("../service/config.service.js");
+const configFilePath = "../data/factorio-config.bin";
 
 /**
  * Retorna configuração atual
  */
 router.get("/", (req, res) => {
-	res.json(configService.getConfig());
+  const data = freadBin(configFilePath);
+  res.json(data);
 });
 
 /**
  * Atualiza configuração
  */
 router.post("/", (req, res) => {
-	configService.saveConfig(req.body);
-	res.json({ success: true });
+  const payload = req.body;
+  let status = fwriteBin(configFilePath, payload);
+  res.json({ success: status });
 });
 
 module.exports = router;

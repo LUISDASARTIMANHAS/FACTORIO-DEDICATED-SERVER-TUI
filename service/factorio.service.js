@@ -1,5 +1,4 @@
 const { spawn } = require("child_process");
-const configService = require("./config.service.js");
 
 let factorioProcess = null;
 
