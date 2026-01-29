@@ -1,4 +1,6 @@
-const { spawn } = require("child_process");
+const { exec } = require("child_process");
+const { freadBin } = require("npm-package-nodejs-utils-lda");
+const configFilePath = "./data/factorio-config.bin";
 
 let factorioProcess = null;
 
@@ -7,7 +9,7 @@ let factorioProcess = null;
  * @return {object}
  */
 function getConfig() {
-	return configService.getConfig();
+	return freadBin(configFilePath);
 }
 
 /**
@@ -19,31 +21,17 @@ function startServer() {
 		if (factorioProcess) {
 			return resolve("Servidor já está em execução");
 		}
-
 		const cfg = getConfig();
 
 		// 🔴 validação mínima (OBRIGATÓRIA)
 		if (!cfg.factorioPath || !cfg.savePath) {
-			return reject(
-				new Error("Caminho do Factorio ou Save não configurado")
-			);
+			return reject(new Error("Caminho do Factorio ou Save não configurado"));
 		}
 
-		factorioProcess = spawn(
-			cfg.factorioPath,
-			[
-				"--start-server",
-				cfg.savePath,
-				"--port",
-				cfg.serverPort
-			],
-			{
-				detached: true,
-				stdio: "ignore"
-			}
+		factorioProcess = exec(`${cfg.factorioPath} --start-server ${cfg.savePath} --port ${cfg.serverPort}`
 		);
 
-		factorioProcess.on("error", err => {
+		factorioProcess.on("error", (err) => {
 			factorioProcess = null;
 			reject(err);
 		});
@@ -57,7 +45,7 @@ function startServer() {
  * @return {Promise<string>}
  */
 function stopServer() {
-	return new Promise(resolve => {
+	return new Promise((resolve) => {
 		if (!factorioProcess) {
 			return resolve("Servidor já está parado");
 		}
@@ -80,5 +68,5 @@ function getStatus() {
 module.exports = {
 	startServer,
 	stopServer,
-	getStatus
+	getStatus,
 };

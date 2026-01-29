@@ -41,7 +41,7 @@ async function startServer() {
 	const res = await apiFetch("/api/factorio/start", { method: "POST" });
 	const data = await res.json();
 
-	setStatus("ONLINE");
+	fetchStatus();
 	log("[SYSTEM] " + data.message);
 }
 
@@ -53,7 +53,7 @@ async function stopServer() {
 	const res = await apiFetch("/api/factorio/stop", { method: "POST" });
 	const data = await res.json();
 
-	setStatus("OFFLINE");
+	fetchStatus();
 	log("[SYSTEM] " + data.message);
 }
 
@@ -64,6 +64,7 @@ async function stopServer() {
 async function restartServer() {
 	await stopServer();
 	await startServer();
+	fetchStatus();
 }
 
 /**
@@ -87,6 +88,21 @@ async function sendCommand() {
 	log("[SERVER] " + data.message);
 }
 
+async function fetchStatus() {
+	const res = await apiFetch("/api/factorio/status", { method: "GET" });
+	const data = await res.json();
+	setStatus(data.status);
+}
+
+async function fetchConsoleOut() {
+	const res = await apiFetch("/api/factorio/output", { method: "GET" });
+	const data = await res.json();
+
+	log("[SERVER] " + data.message);
+	setStatus(data.status);
+}
+
+
 /**
  * Log no painel
  * @param {string} msg
@@ -97,3 +113,7 @@ function log(msg) {
 	el.textContent += msg + "\n";
 	el.scrollTop = el.scrollHeight;
 }
+
+fetchStatus();
+setInterval(fetchStatus, 15000);
+setInterval(fetchConsoleOut, 2000);

@@ -13,6 +13,7 @@ if (!fs.existsSync(configFilePath)) {
     factorioPath: path.resolve(__dirname,"..","..","factorio"),
     factorioPort: "34197",
     factorioRcon: "27015",
+    savePath: path.resolve(__dirname,"..","..","factorio","saves","save.zip"),
   };
   fwriteBin(configFilePath, defaultSchema); // Cria um arquivo binário vazio
 }
