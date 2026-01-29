@@ -1,5 +1,7 @@
 const API_TOKEN = "teste";
 
+let lastLogIndex = 0;
+
 /**
  * Fetch padrão da API com Authorization
  * @param {string} url
@@ -40,9 +42,8 @@ function setStatus(status) {
 async function startServer() {
 	const res = await apiFetch("/api/factorio/start", { method: "POST" });
 	const data = await res.json();
-
 	fetchStatus();
-	log("[SYSTEM] " + data.message);
+	log(`[SYSTEM] ${data.message}`);
 }
 
 /**
@@ -52,9 +53,8 @@ async function startServer() {
 async function stopServer() {
 	const res = await apiFetch("/api/factorio/stop", { method: "POST" });
 	const data = await res.json();
-
 	fetchStatus();
-	log("[SYSTEM] " + data.message);
+	log(`[SYSTEM] ${data.message}`);
 }
 
 /**
@@ -76,7 +76,7 @@ async function sendCommand() {
 	const cmd = input.value.trim();
 	if (!cmd) return;
 
-	log("> " + cmd);
+	log(`> ${cmd}`);
 	input.value = "";
 
 	const res = await apiFetch("/api/factorio/command", {
@@ -85,23 +85,47 @@ async function sendCommand() {
 	});
 
 	const data = await res.json();
-	log("[SERVER] " + data.message);
+	log(`[SERVER] ${data.message}`);
 }
 
+/**
+ * Busca status do servidor
+ * @return {Promise<void>}
+ */
 async function fetchStatus() {
 	const res = await apiFetch("/api/factorio/status", { method: "GET" });
 	const data = await res.json();
 	setStatus(data.status);
 }
 
+/**
+ * Busca saída do console e renderiza corretamente
+ * @return {Promise<void>}
+ */
 async function fetchConsoleOut() {
 	const res = await apiFetch("/api/factorio/output", { method: "GET" });
 	const data = await res.json();
 
-	log("[SERVER] " + data.message);
-	setStatus(data.status);
+	if (!Array.isArray(data.message)) return;
+
+	for (let i = lastLogIndex; i < data.message.length; i++) {
+		const entry = data.message[i];
+		renderLog(entry);
+	}
+
+	lastLogIndex = data.message.length;
 }
 
+/**
+ * Renderiza uma linha de log formatada
+ * @param {{time:string,type:string,message:string}} entry
+ * @return {void}
+ */
+function renderLog(entry) {
+	const time = new Date(entry.time).toLocaleTimeString();
+	const type = entry.type.toUpperCase();
+	log(`[${time}][${type}] ${entry.message}`);
+}
 
 /**
  * Log no painel
@@ -114,6 +138,7 @@ function log(msg) {
 	el.scrollTop = el.scrollHeight;
 }
 
+/* Init */
 fetchStatus();
 setInterval(fetchStatus, 15000);
 setInterval(fetchConsoleOut, 2000);

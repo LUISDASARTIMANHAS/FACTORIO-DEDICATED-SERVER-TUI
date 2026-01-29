@@ -7,14 +7,14 @@ const API_TOKEN = "teste";
  * @return {Promise<Response>}
  */
 function apiFetch(url, options = {}) {
-	return fetch(url, {
-		...options,
-		headers: {
-			"Content-Type": "application/json",
-			Authorization: `Bearer ${API_TOKEN}`,
-			...(options.headers || {}),
-		},
-	});
+  return fetch(url, {
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_TOKEN}`,
+      ...(options.headers || {}),
+    },
+  });
 }
 
 /**
@@ -22,33 +22,40 @@ function apiFetch(url, options = {}) {
  * @return {Promise<void>}
  */
 async function loadConfig() {
-	const res = await apiFetch("/api/factorio/config");
-	const data = await res.json();
+  const res = await apiFetch("/api/factorio/config");
+  const data = await res.json();
 
-	Object.keys(data).forEach((key) => {
-		const el = document.getElementById(key);
-		if (el) el.value = data[key];
-	});
+  Object.keys(data).forEach((key) => {
+    const el = document.getElementById(key);
+    console.log(key, el);
+    if (el) {
+      if (key == "dirname") {
+        el.textContent = data[key];
+      }
+      el.value = data[key];
+    }
+  });
 }
 
 document.getElementById("configForm").addEventListener("submit", async (e) => {
-	e.preventDefault();
+  e.preventDefault();
 
-	const config = {
-		factorioPath: factorioPath.value,
-		savePath: savePath.value,
-		serverPort: Number(serverPort.value),
-		rconPort: Number(rconPort.value),
-		rconPassword: rconPassword.value,
-	};
+  const config = {
+    dirname: dirname.value,
+    factorioPath: factorioPath.value,
+    savePath: savePath.value,
+    factorioPort: Number(factorioPort.value),
+    factorioRcon: Number(factorioRcon.value),
+    rconPassword: rconPassword.value,
+  };
 
-	const res = await apiFetch("/api/factorio/config", {
-		method: "POST",
-		body: JSON.stringify(config),
-	});
+  const res = await apiFetch("/api/factorio/config", {
+    method: "POST",
+    body: JSON.stringify(config),
+  });
 
-	const data = await res.json();
-	document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+  const data = await res.json();
+  document.getElementById("result").textContent = JSON.stringify(data, null, 2);
 });
 
 loadConfig();

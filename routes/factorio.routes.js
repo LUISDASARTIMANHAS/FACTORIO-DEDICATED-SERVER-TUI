@@ -9,6 +9,10 @@ router.get("/status", (req, res) => {
 	res.json({ status: factorio.getStatus() });
 });
 
+router.get("/output", (req, res) => {
+	res.json({ message: factorio.getConsoleOutput()});
+});
+
 /**
  * Iniciar servidor
  */
@@ -18,9 +22,10 @@ router.post("/start", async (req, res) => {
 		res.json({ message: msg });
 	} catch (e) {
 		console.error("[FACTORIO START ERROR]", e);
-		res.status(500).json({
+		res.status(500)
+		res.json({
 			error: "Erro ao iniciar servidor",
-			details: e.message
+			details: e.message,
 		});
 	}
 });
@@ -33,7 +38,8 @@ router.post("/stop", async (req, res) => {
 		const msg = await factorio.stopServer();
 		res.json({ message: msg });
 	} catch (e) {
-		res.status(500).json({ error: "Erro ao parar servidor" });
+		res.status(500);
+		res.json({ error: `Erro ao parar servidor`, details: e.message });
 	}
 });
 

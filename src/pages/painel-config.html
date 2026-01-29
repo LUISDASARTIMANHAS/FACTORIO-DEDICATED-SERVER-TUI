@@ -18,6 +18,11 @@
 
 			<form id="configForm" class="mt-4">
 				<div class="mb-3">
+					<label class="form-label">Caminho do Diretorio</label>
+					<span disabled id="dirname" class="form-control bg-dark text-light"></span>
+				</div>
+
+				<div class="mb-3">
 					<label class="form-label">Caminho do Factorio</label>
 					<input
 						id="factorioPath"
@@ -38,7 +43,7 @@
 				<div class="mb-3">
 					<label class="form-label">Porta do Servidor</label>
 					<input
-						id="serverPort"
+						id="factorioPort"
 						type="number"
 						class="form-control bg-dark text-light"
 					/>
@@ -47,7 +52,7 @@
 				<div class="mb-3">
 					<label class="form-label">Porta RCON</label>
 					<input
-						id="rconPort"
+						id="factorioRcon"
 						type="number"
 						class="form-control bg-dark text-light"
 					/>
