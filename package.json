@@ -24,6 +24,6 @@
   "dependencies": {
     "multer": "^2.0.2",
     "nodemon": "^3.1.11",
-    "npm-package-nodejs-utils-lda": "^1.0.56"
+    "npm-package-nodejs-utils-lda": "^1.0.57"
   }
 }

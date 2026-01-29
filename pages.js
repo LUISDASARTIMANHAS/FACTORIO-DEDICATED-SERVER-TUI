@@ -15,7 +15,8 @@ const {
 	forbidden,
 	formatDate,
 	conversorSimEnao,
-	landingPage
+	landingPage,
+	sanitizeNetworkInterfaces
 } = require("npm-package-nodejs-utils-lda");
 
 // const files = __dirname + "/src/";
@@ -32,26 +33,24 @@ router.get("/", (req, res) => {
 	console.log("SISTEMA <OBTER> <SITE>: " + req.url);
 	landingPage(res);
 });
-
-router.get('/status', (req, res) => {
-	const healthCheck = {
-		uptime: process.uptime(),
-		message: 'OK',
-		timestamp: Date.now(),
-		cpuUsage: os.loadavg(),
-		memoryUsage: process.memoryUsage(),
-		platform: os.platform(),
-		cpuCores: os.cpus().length,
-		totalMemory: os.totalmem(),
-		freeMemory: os.freemem(),
-		networkInterfaces: os.networkInterfaces()
-	};
-
+router.get("/status", (req, res) => {
 	try {
-		res.json(healthCheck);
+		const rawInterfaces = os.networkInterfaces();
+
+		res.json({
+			uptime: process.uptime(),
+			message: "OK",
+			timestamp: Date.now(),
+			cpuUsage: os.loadavg(),
+			memoryUsage: process.memoryUsage(),
+			platform: os.platform(),
+			cpuCores: os.cpus().length,
+			totalMemory: os.totalmem(),
+			freeMemory: os.freemem(),
+			network: sanitizeNetworkInterfaces(rawInterfaces)
+		});
 	} catch (e) {
-		healthCheck.message = e;
-		res.status(503).send();
+		res.status(503).json({ message: "ERROR" });
 	}
 });
 
