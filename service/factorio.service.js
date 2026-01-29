@@ -1,34 +1,55 @@
-const { exec } = require("child_process");
+const { spawn } = require("child_process");
 const configService = require("./config.service.js");
 
-const cfg = configService.getConfig();
-// usa cfg.factorioPath, cfg.savePath etc
-
-let serverStatus = "OFFLINE";
+let factorioProcess = null;
 
 /**
- * Retorna status atual do servidor
- * @return {string}
+ * Lê configuração atual
+ * @return {object}
  */
-function getStatus() {
-	return serverStatus;
+function getConfig() {
+	return configService.getConfig();
 }
 
 /**
- * Inicia o servidor Factorio
+ * Inicia o servidor Factorio usando config do usuário
  * @return {Promise<string>}
  */
 function startServer() {
 	return new Promise((resolve, reject) => {
-		if (serverStatus === "ONLINE") {
-			return resolve("Servidor já está online");
+		if (factorioProcess) {
+			return resolve("Servidor já está em execução");
 		}
 
-		exec("factorio --start-server save.zip", (err) => {
-			if (err) return reject(err);
-			serverStatus = "ONLINE";
-			resolve("Servidor iniciado");
+		const cfg = getConfig();
+
+		// 🔴 validação mínima (OBRIGATÓRIA)
+		if (!cfg.factorioPath || !cfg.savePath) {
+			return reject(
+				new Error("Caminho do Factorio ou Save não configurado")
+			);
+		}
+
+		factorioProcess = spawn(
+			cfg.factorioPath,
+			[
+				"--start-server",
+				cfg.savePath,
+				"--port",
+				cfg.serverPort
+			],
+			{
+				detached: true,
+				stdio: "ignore"
+			}
+		);
+
+		factorioProcess.on("error", err => {
+			factorioProcess = null;
+			reject(err);
 		});
+
+		resolve("Servidor iniciado");
 	});
 }
 
@@ -37,32 +58,28 @@ function startServer() {
  * @return {Promise<string>}
  */
 function stopServer() {
-	return new Promise((resolve, reject) => {
-		if (serverStatus === "OFFLINE") {
-			return resolve("Servidor já está offline");
+	return new Promise(resolve => {
+		if (!factorioProcess) {
+			return resolve("Servidor já está parado");
 		}
 
-		exec("taskkill /IM factorio.exe /F", (err) => {
-			if (err) return reject(err);
-			serverStatus = "OFFLINE";
-			resolve("Servidor parado");
-		});
+		process.kill(-factorioProcess.pid);
+		factorioProcess = null;
+
+		resolve("Servidor parado");
 	});
 }
 
 /**
- * Envia comando via RCON
- * @param {string} command
- * @return {Promise<string>}
+ * Retorna status do servidor
+ * @return {string}
  */
-function sendCommand(command) {
-	// Aqui entra RCON real depois
-	return Promise.resolve(`Comando executado: ${command}`);
+function getStatus() {
+	return factorioProcess ? "ONLINE" : "OFFLINE";
 }
 
 module.exports = {
-	getStatus,
 	startServer,
 	stopServer,
-	sendCommand
+	getStatus
 };
