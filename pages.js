@@ -18,16 +18,15 @@ const {
 	landingPage
 } = require("npm-package-nodejs-utils-lda");
 
-const files = __dirname + "/src/";
-const path_css = files + "css/";
-const path_js = files + "js/";
-const path_pages = files + "pages/";
-const hostFilePath = path.join(path_pages, "host.html");
+// const files = __dirname + "/src/";
+// const path_css = files + "css/";
+// const path_js = files + "js/";
+// const path_pages = files + "pages/";
 
-router.use(express.static(files));
-console.log("LOAD STATIC ITENS: " + path_css);
-console.log("LOAD STATIC ITENS: " + path_js);
-console.log("LOAD STATIC ITENS: " + path_pages);
+// router.use(express.static(files));
+// console.log("LOAD STATIC ITENS: " + path_css);
+// console.log("LOAD STATIC ITENS: " + path_js);
+// console.log("LOAD STATIC ITENS: " + path_pages);
 
 router.get("/", (req, res) => {
 	console.log("SISTEMA <OBTER> <SITE>: " + req.url);
@@ -41,6 +40,11 @@ router.get('/status', (req, res) => {
 		timestamp: Date.now(),
 		cpuUsage: os.loadavg(),
 		memoryUsage: process.memoryUsage(),
+		platform: os.platform(),
+		cpuCores: os.cpus().length,
+		totalMemory: os.totalmem(),
+		freeMemory: os.freemem(),
+		networkInterfaces: os.networkInterfaces()
 	};
 
 	try {

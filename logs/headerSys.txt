@@ -130,3 +130,247 @@
 	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
 	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
 	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /.well-known/appspecific/com.chrome.devtools.json
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.bundle.js.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.css.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /.well-known/appspecific/com.chrome.devtools.json
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.bundle.js.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.css.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /.well-known/appspecific/com.chrome.devtools.json
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.bundle.js.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.css.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /favicon.ico
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /.well-known/appspecific/com.chrome.devtools.json
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.css.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.bundle.js.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /.well-known/appspecific/com.chrome.devtools.json
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.css.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.bundle.js.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /.well-known/appspecific/com.chrome.devtools.json
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.css.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.bundle.js.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /.well-known/appspecific/com.chrome.devtools.json
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.css.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.bundle.js.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /favicon.ico
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /.well-known/appspecific/com.chrome.devtools.json
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.bundle.js.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.css.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /.well-known/appspecific/com.chrome.devtools.json
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.css.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /status
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: http://localhost:34190/
+	[npm-package-nodejs-utils-lda] [info] -------------------------
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <CHECK> <GET>: /assets/bootstrap.bundle.js.map
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <PAYLOAD>: undefined
+	[npm-package-nodejs-utils-lda] [info] SYSTEM <ORIGEM>: undefined
