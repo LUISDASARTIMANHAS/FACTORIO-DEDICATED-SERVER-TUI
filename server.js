@@ -128,7 +128,7 @@ const {
 
 // configs e modulos extras
 require("dotenv").config();
-const ddosModule = require("./modules/ddosModule.js");
+// const ddosModule = require("./modules/ddosModule.js");
 const routesDir = __dirname;
 // const hostname = "127.0.0.1"; só local
 // const hostname = "0.0.0.0"; Bind na placa de rede
@@ -139,7 +139,7 @@ const porta = process.env.PORT;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(ddosModule().express);
+// app.use(ddosModule().express);
 
 applyAutoMiddlewares(app);
 WSChat(); // starts HTTP + WS server on port 8080
