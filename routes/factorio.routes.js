@@ -1,6 +1,6 @@
-const express = require("express");
+const express = import("express");
 const router = express.Router();
-const factorio = require("../service/factorio.service.js");
+const factorio = import("../service/factorio.service.js");
 
 /**
  * Status do servidor

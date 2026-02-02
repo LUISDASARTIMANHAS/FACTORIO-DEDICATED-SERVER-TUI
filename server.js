@@ -4,7 +4,7 @@
 // 401 Unauthorized
 // Embora o padrão HTTP especifique "unauthorized", semanticamente, essa resposta significa "unauthenticated". Ou seja, o cliente deve se autenticar para obter a resposta solicitada.
 
-// 402 Payment Required Experimental
+// 402 Payment importd Experimental
 // Este código de resposta está reservado para uso futuro. O objetivo inicial da criação deste código era usá-lo para sistemas digitais de pagamento, no entanto, este código de status é usado raramente e não existe nenhuma convenção padrão.
 
 // 403 Forbidden
@@ -19,7 +19,7 @@
 // 406 Not Acceptable
 // Esta resposta é enviada quando o servidor web, após realizar negociação de conteúdo orientada pelo servidor, não encontra nenhum conteúdo que esteja em conformidade com os critérios fornecidos por o agente do usuário.
 
-// 407 Proxy Authentication Required
+// 407 Proxy Authentication importd
 // É semelhante a 401 Unauthorized, mas a autenticação precisa ser feita por um proxy.
 
 // 408 Request Timeout
@@ -31,7 +31,7 @@
 // 410 Gone
 // Esta resposta é enviada quando o conteúdo solicitado foi excluído permanentemente do servidor, sem endereço de encaminhamento. Espera-se que os clientes removam seus caches e links para o recurso. A especificação HTTP pretende que esse código de status seja usado para "serviços promocionais por tempo limitado". As APIs não devem se sentir compelidas a indicar recursos que foram excluídos com esse código de status.
 
-// 411 Length Required
+// 411 Length importd
 // O servidor rejeitou a solicitação porque o campo de cabeçalho Content-Length não está definido e o servidor o exige.
 
 // 412 Precondition Failed
@@ -70,10 +70,10 @@
 // 425 Too Early Experimental
 // Indica que o servidor não está disposto a correr o risco de processar uma solicitação que pode ser repetida.
 
-// 426 Upgrade Required
+// 426 Upgrade importd
 // O servidor se recusa a executar a solicitação usando o protocolo atual, mas pode estar disposto a fazê-lo depois que o cliente atualizar para um protocolo diferente. O servidor envia um cabeçalho Upgrade em uma resposta 426 para indicar os protocolos necessários.
 
-// 428 Precondition Required
+// 428 Precondition importd
 // O servidor de origem exige que a solicitação seja condicional. Esta resposta destina-se a prevenir o problema de 'atualização perdida', onde um cliente pega (GET) o estado de um recurso, o modifica e o coloca (PUT) de volta no servidor, quando entretanto um terceiro modificou o estado no servidor, levando a um conflito.
 
 // 429 Too Many Requests
@@ -116,26 +116,31 @@
 // 510 Not Extended
 // Extensões adicionais à solicitação são necessárias para que o servidor a atenda.
 
-// 511 Network Authentication Required
+// 511 Network Authentication importd
 // Indica que o cliente precisa se autenticar para obter acesso à rede.
-const express = require("express");
-let app = express();
-const {
+import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+import dotenv from "dotenv";
+import {
   discordLogs,
   applyAutoMiddlewares,
   WSChat,
-} = require("npm-package-nodejs-utils-lda");
+} from "npm-package-nodejs-utils-lda";
 
 // configs e modulos extras
-require("dotenv").config();
-// const ddosModule = require("./modules/ddosModule.js");
-const routesDir = __dirname;
+dotenv.config();
+// const ddosModule = import("./modules/ddosModule.js");
+const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 // const hostname = "127.0.0.1"; só local
 // const hostname = "0.0.0.0"; Bind na placa de rede
 // const hostname = "::"; bind ipv4 e ipv6 pra fora
 const hostname = "::";
 // 0 força o express a pegar uma porta aleatora
 const porta = process.env.PORT || 34190;
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

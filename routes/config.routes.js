@@ -1,7 +1,7 @@
-const express = require("express");
-const fs = require("fs");
-const { freadBin, fwriteBin } = require("npm-package-nodejs-utils-lda");
-const path = require("path");
+const express = import("express");
+const fs = import("fs");
+const { freadBin, fwriteBin } = import("npm-package-nodejs-utils-lda");
+const path = import("path");
 const router = express.Router();
 const configFilePath = "./data/factorio-config.bin";
 

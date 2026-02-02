@@ -1,9 +1,10 @@
-const express = require("express");
+/* eslint-disable no-unused-vars */
+import express from "express";
 const router = express.Router();
-const fs = require("fs");
-const os = require("os");
-const path = require("path");
-const {
+import fs from "fs";
+import os from "os";
+import {path,dirname} from "path";
+import {
 	getRandomInt,
 	getRandomBin,
 	getRandomHex,
@@ -17,9 +18,9 @@ const {
 	conversorSimEnao,
 	landingPage,
 	sanitizeNetworkInterfaces,
-} = require("npm-package-nodejs-utils-lda");
+} from "npm-package-nodejs-utils-lda";
 
-const files = __dirname + "/src/";
+const files = dirname + "/src/";
 const path_css = files + "css/";
 const path_js = files + "js/";
 const path_pages = files + "pages/";
@@ -70,4 +71,4 @@ router.get("/debugger", (req, res) => {
 	res.status(200);
 });
 
-module.exports = router;
+export default router;

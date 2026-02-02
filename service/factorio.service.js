@@ -1,5 +1,5 @@
-const { spawn } = require("child_process");
-const { freadBin } = require("npm-package-nodejs-utils-lda");
+const { spawn } = import("child_process");
+const { freadBin } = import("npm-package-nodejs-utils-lda");
 
 const configFilePath = "./data/factorio-config.bin";
 

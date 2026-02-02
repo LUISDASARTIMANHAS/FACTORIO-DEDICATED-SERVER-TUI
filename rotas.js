@@ -1,8 +1,8 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const { notfound } = require("npm-package-nodejs-utils-lda");
-const factorioControlRoutes = require("./routes/factorio.routes");
-const factorioConfigRoutes = require("./routes/config.routes");
+import { notfound } from "npm-package-nodejs-utils-lda";
+import factorioControlRoutes from "./routes/factorio.routes";
+import factorioConfigRoutes from "./routes/config.routes";
 // gerenciador de rotas central
 // não adicione logica aqui diretamente,
 // crie um arquivo de rota separado em /routes e importe aqui
@@ -18,4 +18,4 @@ router.use((req, res, next) => {
   notfound(res);
 });
 
-module.exports = router;
+export default router;
