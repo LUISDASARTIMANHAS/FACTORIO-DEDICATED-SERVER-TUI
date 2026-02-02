@@ -1,4 +1,4 @@
 @echo off
 
-npm run start
+npm run dev
 pause
