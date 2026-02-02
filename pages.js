@@ -3,14 +3,13 @@ import express from "express";
 const router = express.Router();
 import fs from "fs";
 import os from "os";
-import {path,dirname} from "path";
+import path from "path";
 import {
 	getRandomInt,
 	getRandomBin,
 	getRandomHex,
 	generateToken,
 	ordenarUsuario,
-	pesqUsuario,
 	validadeApiKey,
 	unauthorized,
 	forbidden,
@@ -18,14 +17,18 @@ import {
 	conversorSimEnao,
 	landingPage,
 	sanitizeNetworkInterfaces,
+	exposeFolders
 } from "npm-package-nodejs-utils-lda";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const files = dirname + "/src/";
+const files = __dirname + "/src/";
 const path_css = files + "css/";
 const path_js = files + "js/";
 const path_pages = files + "pages/";
 
-router.use(express.static(files));
+exposeFolders(router, files);
 console.log("LOAD STATIC ITENS: " + path_css);
 console.log("LOAD STATIC ITENS: " + path_js);
 console.log("LOAD STATIC ITENS: " + path_pages);

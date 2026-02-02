@@ -1,16 +1,16 @@
-const express = import("express");
+import express from "express";
+import { getConsoleOutput, getStatus, startServer, stopServer } from "../service/factorio.js";
 const router = express.Router();
-const factorio = import("../service/factorio.service.js");
 
 /**
  * Status do servidor
  */
 router.get("/status", (req, res) => {
-	res.json({ status: factorio.getStatus() });
+	res.json({ status: getStatus() });
 });
 
 router.get("/output", (req, res) => {
-	res.json({ message: factorio.getConsoleOutput()});
+	res.json({ message: getConsoleOutput()});
 });
 
 /**
@@ -18,7 +18,7 @@ router.get("/output", (req, res) => {
  */
 router.post("/start", async (req, res) => {
 	try {
-		const msg = await factorio.startServer();
+		const msg = await startServer();
 		res.json({ message: msg });
 	} catch (e) {
 		console.error("[FACTORIO START ERROR]", e);
@@ -35,7 +35,7 @@ router.post("/start", async (req, res) => {
  */
 router.post("/stop", async (req, res) => {
 	try {
-		const msg = await factorio.stopServer();
+		const msg = await stopServer();
 		res.json({ message: msg });
 	} catch (e) {
 		res.status(500);
@@ -47,9 +47,10 @@ router.post("/stop", async (req, res) => {
  * Enviar comando RCON
  */
 router.post("/command", async (req, res) => {
-	const { command } = req.body;
-	const result = await factorio.sendCommand(command);
-	res.json({ message: result });
+	// const { command } = req.body;
+	// const result = await factorio.sendCommand(command);
+	// res.json({ message: result });
+	res.sendStatus(501); // Not implemented
 });
 
-module.exports = router;
+export default router;

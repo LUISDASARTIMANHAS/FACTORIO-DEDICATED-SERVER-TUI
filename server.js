@@ -119,21 +119,19 @@
 // 511 Network Authentication importd
 // Indica que o cliente precisa se autenticar para obter acesso à rede.
 import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import {
   discordLogs,
   applyAutoMiddlewares,
   WSChat,
 } from "npm-package-nodejs-utils-lda";
+import pagesManager from "./pages.js"
+import rotasManager from "./rotas.js"
 
 // configs e modulos extras
 dotenv.config();
 // const ddosModule = import("./modules/ddosModule.js");
 const app = express();
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 // const hostname = "127.0.0.1"; só local
 // const hostname = "0.0.0.0"; Bind na placa de rede
 // const hostname = "::"; bind ipv4 e ipv6 pra fora
@@ -145,9 +143,12 @@ const porta = process.env.PORT || 34190;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // app.use(ddosModule().express);
-
 applyAutoMiddlewares(app);
+
 WSChat(); // starts HTTP + WS server on port 8080
+
+app.use(pagesManager);
+app.use(rotasManager);
 
 var server = app.listen(porta || 0, hostname, function () {
   // Corrige: server.address() pode ser null se o bind falhar

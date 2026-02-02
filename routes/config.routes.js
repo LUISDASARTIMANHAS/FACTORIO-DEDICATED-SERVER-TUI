@@ -1,9 +1,12 @@
-const express = import("express");
-const fs = import("fs");
-const { freadBin, fwriteBin } = import("npm-package-nodejs-utils-lda");
-const path = import("path");
+import express from "express";
+import fs from "fs";
+import { freadBin, fwriteBin } from "npm-package-nodejs-utils-lda";
+import path from "path";
+import { fileURLToPath } from "url";
 const router = express.Router();
 const configFilePath = "./data/factorio-config.bin";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Verifica se o arquivo users.bin existe
 if (!fs.existsSync(configFilePath)) {
@@ -35,4 +38,4 @@ router.post("/", (req, res) => {
   res.json({ success: status });
 });
 
-module.exports = router;
+export default router;

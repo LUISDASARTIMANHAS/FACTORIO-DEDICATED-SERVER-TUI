@@ -1,5 +1,5 @@
-const { spawn } = import("child_process");
-const { freadBin } = import("npm-package-nodejs-utils-lda");
+import { spawn } from "child_process"
+import { freadBin } from "npm-package-nodejs-utils-lda"
 
 const configFilePath = "./data/factorio-config.bin";
 
@@ -30,7 +30,7 @@ function pushOutput(type, message) {
  * Retorna saída completa do console
  * @return {Array}
  */
-function getConsoleOutput() {
+export function getConsoleOutput() {
 	return consoleOutput;
 }
 
@@ -46,7 +46,7 @@ function getConfig() {
  * Inicia o servidor Factorio (WINDOWS SAFE)
  * @return {Promise<string>}
  */
-function startServer() {
+export function startServer() {
 	return new Promise((resolve, reject) => {
 		if (factorioProcess?.pid) {
 			return resolve(`Servidor já está em execução PID: ${factorioProcess.pid}`);
@@ -115,7 +115,7 @@ function startServer() {
  * Para o servidor Factorio
  * @return {Promise<string>}
  */
-function stopServer() {
+export function stopServer() {
 	return new Promise((resolve, reject) => {
 		if (!factorioProcess?.pid) {
 			pushOutput("system", "Servidor já estava parado");
@@ -139,15 +139,8 @@ function stopServer() {
  * Retorna status do servidor
  * @return {string}
  */
-function getStatus() {
+export function getStatus() {
 	return factorioProcess?.pid
 		? `ONLINE PID: ${factorioProcess.pid}`
 		: "OFFLINE";
 }
-
-module.exports = {
-	startServer,
-	stopServer,
-	getStatus,
-	getConsoleOutput,
-};

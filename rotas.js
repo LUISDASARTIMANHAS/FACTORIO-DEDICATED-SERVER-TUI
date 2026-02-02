@@ -1,8 +1,8 @@
 import express from "express";
 const router = express.Router();
 import { notfound } from "npm-package-nodejs-utils-lda";
-import factorioControlRoutes from "./routes/factorio.routes";
-import factorioConfigRoutes from "./routes/config.routes";
+import factorioControlRoutes from "./routes/factorio.routes.js";
+import factorioConfigRoutes from "./routes/config.routes.js";
 // gerenciador de rotas central
 // não adicione logica aqui diretamente,
 // crie um arquivo de rota separado em /routes e importe aqui
