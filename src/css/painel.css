@@ -1,24 +1,74 @@
+:root {
+    --factorio-orange: #ff9f43; /* Laranja mais vibrante */
+    --terminal-green: #2ecc71; /* Verde mais legível */
+    --bg-main: #121212;
+    --bg-card: #1c1c1e;
+    --terminal-bg: #0d0d0f;
+}
+
 body {
-	background: radial-gradient(circle at top, #1a1a1a, #000);
-	font-family: Consolas, monospace;
+    background-color: var(--bg-main);
+    font-family: 'Fira Code', monospace;
+    color: #e0e0e0; /* Texto geral em cinza claro, não branco puro */
 }
 
+.text-orange { color: var(--factorio-orange); text-shadow: 0 0 5px rgba(230, 126, 34, 0.3); }
+
+/* Melhoria nos Cards */
 .card {
-	border: 1px solid #333;
-	border-radius: 10px;
-	box-shadow: 0 0 15px rgba(0, 255, 170, 0.05);
+    background-color: var(--bg-card) !important;
+    border: 1px solid #333 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-pre {
-	background: #050505;
-	border: 1px solid #222;
-	color: #0f0;
-	padding: 12px;
-	height: 220px;
-	overflow-y: auto;
-	border-radius: 6px;
+.border-orange { border-color: var(--factorio-orange) !important; }
+
+/* Terminal - O Ponto Principal */
+.terminal-window {
+    height: 450px;
+    background: var(--terminal-bg);
+    padding: 18px;
+    overflow-y: auto;
+    font-size: 0.95rem; /* Aumentei um pouco a fonte */
+    border-bottom: 1px solid #444;
+    color: #00ff9d; /* Cor principal de leitura: Verde Água Neon */
+    line-height: 1.5;
+    white-space: pre-wrap; /* Garante que o texto quebre linha se for longo */
 }
 
-button {
-	min-width: 120px;
+/* Estilização interna dos logs para legibilidade */
+.log-system { color: #5dade2; } /* Azul claro para sistema */
+.log-server { color: #f4d03f; } /* Amarelo para mensagens do servidor */
+.log-error { color: #e74c3c; font-weight: bold; }
+
+/* Input de comando mais visível */
+#commandInput::placeholder {
+    color: #555;
 }
+
+.input-group-text {
+    border-top: 1px solid #444 !important;
+}
+
+/* Indicadores de Status */
+.dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.dot-online { 
+    background-color: var(--terminal-green); 
+    box-shadow: 0 0 12px var(--terminal-green); 
+}
+.dot-offline { 
+    background-color: #ff4757; 
+    box-shadow: 0 0 10px #ff4757; 
+}
+
+/* Scrollbar visível mas elegante */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1a1a1a; }
+::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--factorio-orange); }

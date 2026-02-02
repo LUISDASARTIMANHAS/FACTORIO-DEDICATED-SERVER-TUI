@@ -164,7 +164,8 @@ var server = app.listen(porta || 0, hostname, function () {
   // Ajuste: se for IPv6, exibir com colchetes [::1]
   const displayHost = host.includes(":") ? `[${host}]` : host;
 
-  console.log("Servidor rodando em http://%s:%s", hostname, port);
+  console.log("Dashboard rodando em http://localhost:%s", port);
+  console.log("Servidor rodando em http://localhost:%s/painel", port);
   console.log("IP Obtido: http://%s:%s", displayHost, port);
   discordLogs("START", `Servidor rodando em http://${hostname}:${port}`);
 });

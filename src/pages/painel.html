@@ -1,51 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-	<meta charset="UTF-8">
-	<title>Factorio Server Dashboard</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Factorio Control | Pinguinho Server</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/painel.css" />
+  </head>
+  <body class="bg-dark text-light">
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          class="col-md-2 d-none d-md-block sidebar bg-black border-end border-secondary vh-100 p-3"
+        >
+          <h4 class="text-orange mb-4">⚙️ FACTORIO</h4>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link active">Dashboard</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link text-secondary">Mundos / Saves</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link text-secondary">Configurações</a>
+            </li>
+          </ul>
+        </nav>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <main class="col-md-10 ms-sm-auto p-4">
+          <header
+            class="d-flex justify-content-between align-items-center mb-4"
+          >
+            <h2 class="fw-light">
+              Server <span class="text-orange">Dashboard</span>
+            </h2>
+            <div
+              class="status-indicator p-2 px-3 rounded-pill bg-black border border-secondary"
+            >
+              <span id="statusDot" class="dot me-2"></span>
+              <small id="serverStatus">Verificando...</small>
+            </div>
+          </header>
 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="/css/painel.css">
-</head>
+          <div class="row">
+            <div class="col-lg-4 mb-4">
+              <div class="card bg-black h-100 border-orange">
+                <div class="card-body">
+                  <h5 class="card-title mb-4">Ações Rápidas</h5>
+                  <div class="d-grid gap-3">
+                    <button
+                      class="btn btn-outline-success"
+                      onclick="startServer()"
+                    >
+                      INICIAR NÚCLEO
+                    </button>
+                    <button
+                      class="btn btn-outline-warning"
+                      onclick="restartServer()"
+                    >
+                      REINICIAR
+                    </button>
+                    <button
+                      class="btn btn-outline-danger"
+                      onclick="stopServer()"
+                    >
+                      DESLIGAR
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<body class="bg-dark text-light">
+            <div class="col-lg-8 mb-4">
+              <div class="card bg-black border-secondary">
+                <div class="card-header bg-dark d-flex justify-content-between">
+                  <span>Console Central</span>
+                  <span class="text-muted small">RCON Ativo</span>
+                </div>
+                <div class="card-body p-0">
+                  <div id="chatLog" class="terminal-window"></div>
+                  <div class="input-group p-2 bg-dark">
+                    <span
+                      class="input-group-text bg-transparent border-0 text-success"
+                      >></span
+                    >
+                    <input
+                      id="commandInput"
+                      type="text"
+                      class="form-control bg-transparent border-0 text-light shadow-none"
+                      placeholder="Digite um comando Factorio..."
+                    />
+                    <button
+                      class="btn btn-primary rounded-pill px-4"
+                      onclick="sendCommand()"
+                    >
+                      Enviar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
 
-	<header class="container py-3">
-		<h2>⚙️ Factorio Server Control</h2>
-	</header>
-
-	<main class="container">
-
-		<section class="card bg-black text-light mb-4">
-			<div class="card-body">
-				<h5>Status do Servidor</h5>
-				<p id="serverStatus" class="text-warning">Desconhecido</p>
-
-				<div class="d-flex gap-2">
-					<button class="btn btn-success" onclick="startServer()">Iniciar</button>
-					<button class="btn btn-danger" onclick="stopServer()">Parar</button>
-					<button class="btn btn-warning" onclick="restartServer()">Reiniciar</button>
-				</div>
-			</div>
-		</section>
-
-		<section class="card bg-black text-light mb-4">
-			<div class="card-body">
-				<h5>Chat / RCON</h5>
-
-				<div class="input-group">
-					<input id="commandInput" class="form-control bg-dark text-light" placeholder="/players">
-					<button class="btn btn-primary" onclick="sendCommand()">Enviar</button>
-				</div>
-
-				<pre id="chatLog" class="mt-3"></pre>
-			</div>
-		</section>
-
-	</main>
-
-	<script src="/js/painel.js"></script>
-</body>
+    <script src="/js/painel.js"></script>
+  </body>
 </html>

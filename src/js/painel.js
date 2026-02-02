@@ -1,3 +1,4 @@
+// src\js\painel.js
 const API_TOKEN = "teste";
 
 let lastLogIndex = 0;
@@ -25,14 +26,21 @@ function apiFetch(url, options = {}) {
  * @return {void}
  */
 function setStatus(status) {
-	const el = document.getElementById("serverStatus");
-	el.textContent = status;
-	el.className =
-		status === "ONLINE"
-			? "text-success"
-			: status === "OFFLINE"
-			? "text-danger"
-			: "text-warning";
+    const el = document.getElementById("serverStatus");
+    const dot = document.getElementById("statusDot");
+
+    el.textContent = status;
+    dot.className = "dot me-2"; // reset
+
+    if (status === "ONLINE") {
+        el.className = "text-success";
+        dot.classList.add("dot-online");
+    } else if (status === "OFFLINE") {
+        el.className = "text-danger";
+        dot.classList.add("dot-offline");
+    } else {
+        el.className = "text-warning";
+    }
 }
 
 /**
