@@ -1,20 +1,11 @@
 /* eslint-disable no-unused-vars */
+// pages manager
 import express from "express";
 const router = express.Router();
 import fs from "fs";
 import os from "os";
 import path from "path";
 import {
-	getRandomInt,
-	getRandomBin,
-	getRandomHex,
-	generateToken,
-	ordenarUsuario,
-	validadeApiKey,
-	unauthorized,
-	forbidden,
-	formatDate,
-	conversorSimEnao,
 	landingPage,
 	sanitizeNetworkInterfaces,
 	exposeFolders
@@ -33,19 +24,10 @@ console.log("LOAD STATIC ITENS: " + path_css);
 console.log("LOAD STATIC ITENS: " + path_js);
 console.log("LOAD STATIC ITENS: " + path_pages);
 
+
 router.get("/", (req, res) => {
 	console.log("SISTEMA <OBTER> <SITE>: " + req.url);
 	landingPage(res);
-});
-
-router.get("/painel", (req, res) => {
-	console.log("SISTEMA <OBTER> <SITE>: " + req.url);
-	res.sendFile(path.join(path_pages + "painel.html"));
-});
-
-router.get("/painel/config", (req, res) => {
-	console.log("SISTEMA <OBTER> <SITE>: " + req.url);
-	res.sendFile(path.join(path_pages + "painel-config.html"));
 });
 
 router.get("/status", (req, res) => {

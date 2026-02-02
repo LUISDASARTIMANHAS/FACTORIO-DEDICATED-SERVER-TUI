@@ -136,9 +136,6 @@ const app = express();
 // const hostname = "0.0.0.0"; Bind na placa de rede
 // const hostname = "::"; bind ipv4 e ipv6 pra fora
 const hostname = "::";
-// 0 força o express a pegar uma porta aleatora
-const porta = process.env.PORT || 34190;
-
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -150,7 +147,7 @@ WSChat(); // starts HTTP + WS server on port 8080
 app.use(pagesManager);
 app.use(rotasManager);
 
-var server = app.listen(porta || 0, hostname, function () {
+var server = app.listen(34190, hostname, function () {
   // Corrige: server.address() pode ser null se o bind falhar
   const addr = server.address();
 
@@ -165,13 +162,12 @@ var server = app.listen(porta || 0, hostname, function () {
   }
 
   const host = addr.address;
-  const port = addr.port;
 
   // Ajuste: se for IPv6, exibir com colchetes [::1]
   const displayHost = host.includes(":") ? `[${host}]` : host;
 
-  console.log("Dashboard rodando em http://localhost:%s", port);
-  console.log("Servidor rodando em http://localhost:%s/painel", port);
-  console.log("IP Obtido: http://%s:%s", displayHost, port);
-  discordLogs("START", `Servidor rodando em http://${hostname}:${port}`);
+  console.log("Dashboard rodando em http://localhost:34191" );
+  console.log("Servidor BACKEND em http://localhost:34190", );
+  console.log("IP Obtido: http://%s:34190", displayHost);
+  discordLogs("START", `Servidor BACKEND em http://${hostname}:34190`);
 });
