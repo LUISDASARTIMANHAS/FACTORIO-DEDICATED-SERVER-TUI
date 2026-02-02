@@ -14,9 +14,9 @@ function apiFetch(url, options = {}) {
 		...options,
 		headers: {
 			"Content-Type": "application/json",
-			"Authorization": `Bearer ${API_TOKEN}`,
-			...(options.headers || {})
-		}
+			Authorization: `Bearer ${API_TOKEN}`,
+			...(options.headers || {}),
+		},
 	});
 }
 
@@ -26,21 +26,21 @@ function apiFetch(url, options = {}) {
  * @return {void}
  */
 function setStatus(status) {
-    const el = document.getElementById("serverStatus");
-    const dot = document.getElementById("statusDot");
+	const el = document.getElementById("serverStatus");
+	const dot = document.getElementById("statusDot");
 
-    el.textContent = status;
-    dot.className = "dot me-2"; // reset
+	el.textContent = status;
+	dot.className = "dot me-2"; // reset
 
-    if (status === "ONLINE") {
-        el.className = "text-success";
-        dot.classList.add("dot-online");
-    } else if (status === "OFFLINE") {
-        el.className = "text-danger";
-        dot.classList.add("dot-offline");
-    } else {
-        el.className = "text-warning";
-    }
+	if (status === "ONLINE") {
+		el.className = "text-success";
+		dot.classList.add("dot-online");
+	} else if (status === "OFFLINE") {
+		el.className = "text-danger";
+		dot.classList.add("dot-offline");
+	} else {
+		el.className = "text-warning";
+	}
 }
 
 /**
@@ -89,7 +89,7 @@ async function sendCommand() {
 
 	const res = await apiFetch("/api/factorio/command", {
 		method: "POST",
-		body: JSON.stringify({ command: cmd })
+		body: JSON.stringify({ command: cmd }),
 	});
 
 	const data = await res.json();
@@ -136,14 +136,29 @@ function renderLog(entry) {
 }
 
 /**
- * Log no painel
- * @param {string} msg
+ * Adiciona uma entrada ao terminal com tratamento de segurança e auto-scroll.
+ * @param {string} msg - Mensagem a ser exibida.
+ * @param {('system'|'server'|'error'|'command')} type - Categoria do log para estilização.
  * @return {void}
  */
-function log(msg) {
+function log(msg, type = "server") {
 	const el = document.getElementById("chatLog");
-	el.textContent += msg + "\n";
-	el.scrollTop = el.scrollHeight;
+	if (!el) return;
+
+	const line = document.createElement("div");
+	line.className = `log-entry log-${type} py-1 border-bottom border-dark-subtle`;
+
+	// Usando textContent para evitar ataques XSS se o log vier de fontes externas
+	line.textContent = msg;
+
+	el.appendChild(line);
+
+	// Mantém o scroll no final se o usuário não estiver lendo algo acima
+	const isScrolledToBottom =
+		el.scrollHeight - el.clientHeight <= el.scrollTop + 50;
+	if (isScrolledToBottom) {
+		el.scrollTop = el.scrollHeight;
+	}
 }
 
 /* Init */
